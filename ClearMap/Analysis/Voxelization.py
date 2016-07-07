@@ -8,11 +8,13 @@ Converts point data into voxel image data for visulaization and analysis
 import numpy
 import math
 
-import pyximport;
-pyximport.install(setup_args={"include_dirs":numpy.get_include()}, reload_support=True)
-
 import ClearMap.IO as io
 import ClearMap.Analysis.VoxelizationCode as vox
+#import pyximport; pyximport.install()
+#pyximport.install(setup_args={"include_dirs":numpy.get_include()}, reload_support=True)
+
+#import ClearMap.IO as io
+#import ClearMap.Analysis.VoxelizationCode as vox
 
 def voxelize(points, dataSize = None, sink = None, voxelizeParameter = None,  method = 'Spherical', size = (5,5,5), weights = None):
     """Converts a list of points into an volumetric image array

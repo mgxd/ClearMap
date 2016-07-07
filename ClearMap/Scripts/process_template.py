@@ -4,7 +4,7 @@ Template to run the processing pipeline
 """
 
 #load the parameters:
-execfile('/home/yourname/experiment/parameter_file_sampleID.py')
+execfile('/om/user/mathiasg/ClearMap/ClearMap/Scripts/parameter_file_template.py')
 
 
 #resampling operations:

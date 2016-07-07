@@ -24,19 +24,20 @@ from ClearMap.Analysis.Label import labelToName
 ######################### Data parameters
 
 #Directory to save all the results, usually containing the data for one sample
-BaseDirectory = '/home/mtllab/Documents/bicuculline/2';
+BaseDirectory = '/om/scratch/Sun/mathiasg/160622_Npas4_8wks_cFc_10000_23-33-31_2channel';
+resource_dir = '/om/user/mathiasg/clearmap/ClearMap/mouse_brain_files'
 
 #Data File and Reference channel File, usually as a sequence of files from the microscope
 #Use \d{4} for 4 digits in the sequence for instance. As an example, if you have cfos-Z0001.ome.tif :
 #os.path.join() is used to join the BaseDirectory path and the data paths:
-cFosFile = '/home/mtllab/Documents/bicuculline/2/160502_CFos_19-42-30/19-42-30_CFos_UltraII_C00_xyz-Table Z\d{4}.ome.tif';
-AutofluoFile = os.path.join(BaseDirectory, 'channel2/ref-Z\d{4}.ome.tif');
+cFosFile = os.path.join(BaseDirectory, '23-33-31_Npas4_8wks_cFc_10000_UltraII_C01_xyz-Table Z\d{4}.ome.tif');
+AutofluoFile = os.path.join(BaseDirectory, '23-33-31_Npas4_8wks_cFc_10000_UltraII_C00_xyz-Table Z\d{4}.ome.tif');
 
 #Specify the range for the cell detection. This doesn't affect the resampling and registration operations
-cFosFileRange = {'x' : (400,1200), 'y' : (500, 1200), 'z' : (500,1900)};
+cFosFileRange = {'x' : all, 'y' : (180, 2560), 'z' : all};
 
 #Resolution of the Raw Data (in um / pixel)
-OriginalResolution = (4.0625, 4.0625, 3);
+OriginalResolution = (5.1587, 5.1587, 2.5); #(4.0625, 4.0625, 3);
 
 #Orientation: 1,2,3 means the same orientation as the reference and atlas files.
 #Flip axis with - sign (eg. (-1,2,3) flips x). 3D Rotate by swapping numbers. (eg. (2,1,3) swaps x and y)
@@ -44,11 +45,13 @@ FinalOrientation = (1,2,3);
 
 #Resolution of the Atlas (in um/ pixel)
 AtlasResolution = (25, 25, 25);
-
 #Path to registration parameters and atlases
-PathReg        = '/home/mtllab/Documents/warping';
-AtlasFile      = os.path.join(PathReg, 'half_template_25_right_fullWD.tif');
-AnnotationFile = os.path.join(PathReg, 'annotation_25_right_fullWD.tif');
+PathReg        = os.path.join(resource_dir, 'parameter_files');
+#AtlasFile      = os.path.join(PathReg, 'half_template_25_right_fullWD.tif');
+#AtlasFile =      os.path.join(resource_dir, '25um_autofluo_reference', 'template_25.tif');
+AtlasFile = os.path.join(resource_dir, 'regions_annotations', 'annotation_25_full.nrrd')
+#AnnotationFile = os.path.join(resource_dir, 'colored_maps_for_display_purpose_only', 'annotation_25_full_color.tif');
+AnnotationFile = os.path.join(resource_dir, 'regions_annotations', 'annotation_25_full.nrrd') #nrrd)
 
 
 

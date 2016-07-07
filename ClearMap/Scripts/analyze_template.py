@@ -12,7 +12,7 @@ import numpy, os
 
 
 # Base Directory, usually where your experiment is saved:
-baseDirectory = '/home/yourname/experiment'
+baseDirectory = '/om/scratch/Sun/mathiasg/160622_Npas4_8wks_cFc_10000_23-33-31_2channel'
 
 
 
