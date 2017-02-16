@@ -1,7 +1,8 @@
 As far as python packages go - I would suggest installing just what you need. Probably just:
+```
 conda install cython opencv h5py natsort scikit-learn numpy 
-and 
 pip install tifffile
+```
 
 Feel free to ask any questions!
 
